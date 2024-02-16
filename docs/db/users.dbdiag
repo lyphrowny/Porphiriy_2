@@ -1,5 +1,6 @@
 Table users {
   id integer [pk]
   email text
-  password text 
+  password_hash hash
+  recovery_token hash
 }
