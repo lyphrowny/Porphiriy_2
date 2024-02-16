@@ -1,0 +1,7 @@
+Table users {
+  id integer [pk]
+  email text
+  password_hash hash
+  recovery_token hash
+  auth_token hash
+}
