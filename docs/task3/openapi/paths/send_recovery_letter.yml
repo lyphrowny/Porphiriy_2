@@ -1,0 +1,29 @@
+post:
+  description: Send message for password recovery
+  tags:
+    - Passsword recovery
+  parameters:
+    - $ref: common/i18n_param.yml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            email:
+              description: Email
+              type: string
+              format: email
+          example:
+            email: i.do.exist@believe.me
+  responses:
+    '200':
+      description: OK
+    '400':
+      description: Error
+      headers:
+        $ref: "common/i18n_header.yml"
+      content:
+        application/json:
+          schema:
+            $ref: "common/error.yml"

@@ -1,0 +1,5 @@
+Content-Language:
+  description: Gui language
+  schema:
+    type: string
+  example: us-US

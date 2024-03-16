@@ -1,0 +1,12 @@
+type: object
+properties:
+  code:
+    description: Code error
+    type: integer
+    format: int64
+  message:
+    description: Text description
+    type: string
+example:
+  code: 100
+  message: Internal server error

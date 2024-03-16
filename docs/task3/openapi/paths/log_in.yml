@@ -1,0 +1,47 @@
+post:
+  description: Log in
+  tags:
+    - Authentication
+  parameters:
+    - $ref: common/i18n_param.yml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            email:
+              description: Email
+              type: string
+              format: email
+            password:
+              description: Password
+              type: string
+              format: password
+          example:
+            email: i.do.exist@believe.me
+            password: hacked_not
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              token:
+                description: Token for next authorisation
+                type: string
+                format: byte
+            example:
+              token: 09ba91dba1f874f555f594668aa80bded583b712ca5c9135f1d52d7d91ffe64a8f5afba4c07838bb
+    '400':
+      description: Erorr
+      headers:
+        $ref: "common/i18n_header.yml"
+      content:
+        application/json:
+          schema:
+            $ref: "common/error.yml"
+    '401':
+      description: Authentication error

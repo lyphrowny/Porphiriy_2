@@ -1,0 +1,25 @@
+get:
+  description: Check for password recovery token
+  tags:
+    - Password recovery
+  parameters:
+    - name: uuid
+      in: query
+      description: Password recovery token
+      required: true
+      schema:
+        type: string
+        format: uuid
+      example: 0f4b890360d53fc33b7f45f27cb25ac6e1465313bdb7bfca2d7e5b033da92328333a567fdbb328cc
+    - $ref: common/i18n_param.yml
+  responses:
+    '200':
+      description: OK
+    '400':
+      description: Error
+      headers:
+        $ref: "common/i18n_header.yml"
+      content:
+        application/json:
+          schema:
+            $ref: "common/error.yml"

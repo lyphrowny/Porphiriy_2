@@ -1,0 +1,7 @@
+name: Content-Language
+in: header
+description: Gui language
+schema:
+  type: string
+  default: en-US
+example: en-US
